@@ -57,3 +57,26 @@ body {
 .stagger > *:nth-child(8) { animation-delay: 560ms; }
 .stagger > *:nth-child(9) { animation-delay: 640ms; }
 .stagger > *:nth-child(10) { animation-delay: 720ms; }
+
+/* Marquee scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Marquee slow variant */
+.animate-marquee-slow {
+  animation: marquee 45s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
