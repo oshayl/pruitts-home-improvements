@@ -9,16 +9,24 @@ import {
 } from 'lucide-react';
 import Marquee from '@/components/Marquee';
 
-const SERVICES = [
-  { icon: Hammer, title: 'Deck Building, Repairs & Staining', desc: 'Custom decks built to last, plus expert staining, sealing, and repair services.', accent: true },
-  { icon: Droplets, title: 'Power Washing', desc: 'Driveways, siding, decks, and more — we make it look new again.' },
-  { icon: Wrench, title: 'Plumbing', desc: 'Repairs, installations, and fixture replacements. No job too small.' },
-  { icon: Trash2, title: 'Demolition & Haul Offs', desc: 'Clean removal and responsible disposal of unwanted structures and debris.' },
-  { icon: TreePine, title: 'Yard Clean Up', desc: 'Brush clearing, leaf removal, and full property cleanup services.' },
-  { icon: Home, title: 'Gutter Cleaning', desc: 'Keep your gutters flowing and your home protected from water damage.' },
-  { icon: Truck, title: 'Garage & Storage Cleanouts', desc: 'Clear out the clutter. We handle the heavy lifting and the hauling.' },
-  { icon: ArrowRight, title: 'Moving', desc: 'Residential moves and heavy item transport across Springfield and surrounding areas.' },
-  { icon: Shield, title: 'Property Clean Up & More', desc: 'Vacant lots, foreclosure cleanouts, and any job that needs getting done.' },
+const FEATURED_SERVICE = {
+  icon: Hammer,
+  title: 'Deck Building, Repairs & Staining',
+  tags: ['Custom Decks', 'Staining', 'Sealing', 'Repairs'],
+};
+
+const PRIMARY_SERVICES = [
+  { icon: Droplets, title: 'Power Washing', tags: ['Driveways', 'Siding', 'Decks'] },
+  { icon: Wrench, title: 'Plumbing', tags: ['Repairs', 'Installations', 'Fixtures'] },
+];
+
+const OTHER_SERVICES = [
+  { icon: Trash2, title: 'Demolition & Haul Offs' },
+  { icon: TreePine, title: 'Yard Clean Up' },
+  { icon: Home, title: 'Gutter Cleaning' },
+  { icon: Truck, title: 'Garage & Storage Cleanouts' },
+  { icon: ArrowRight, title: 'Moving' },
+  { icon: Shield, title: 'Property Clean Up & More' },
 ];
 
 const TRUST_ITEMS = [
@@ -116,27 +124,65 @@ export default function PruittsHome() {
       <section id="services" className="py-24 px-6 bg-charcoal">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="text-center mb-16">
+            <div className="text-center mb-14">
               <span className="text-[11px] tracking-[0.25em] text-accent uppercase font-bold">What We Do</span>
               <h2 className="text-4xl md:text-5xl font-extrabold mt-3">Our Services</h2>
               <div className="w-16 h-1 bg-accent mx-auto mt-4" />
-              <p className="text-gray-500 text-sm mt-4 max-w-xl mx-auto">From full renovations to quick fixes &mdash; one call handles it all.</p>
             </div>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger">
-            {SERVICES.map((svc, i) => {
+          {/* Bento Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* ── Featured: Deck Building ── */}
+            <Reveal delay={0}>
+              <div className="group md:col-span-2 lg:col-span-2 md:row-span-2 bg-accent/10 border border-accent/20 p-8 md:p-10 hover:border-accent/40 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full" />
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-accent rounded-lg flex items-center justify-center mb-6 group-hover:scale-105 transition-transform">
+                    <FEATURED_SERVICE.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-3">{FEATURED_SERVICE.title}</h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {FEATURED_SERVICE.tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 bg-accent/15 border border-accent/25 text-accent text-[11px] tracking-wider uppercase font-bold rounded-sm">{tag}</span>
+                    ))}
+                  </div>
+                  <a href="tel:+14178182104" className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-xs font-bold tracking-[0.12em] uppercase hover:bg-accent-light transition-all">
+                    <Phone className="w-3.5 h-3.5" />Get a Free Quote
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* ── Primary Services ── */}
+            {PRIMARY_SERVICES.map((svc, i) => {
               const Icon = svc.icon;
               return (
-                <Reveal key={svc.title} delay={i * 80}>
-                  <div className="group relative bg-navy/50 border border-white/5 p-6 hover:border-accent/40 hover:bg-navy/80 transition-all duration-300 overflow-hidden">
-                    {/* Hover accent bar */}
-                    <div className="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-accent transition-all duration-300" />
-                    <div className="w-12 h-12 bg-accent/10 border border-accent/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                      <Icon className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                <Reveal key={svc.title} delay={100 + i * 80}>
+                  <div className="group bg-navy/60 border border-white/5 p-6 hover:border-accent/30 transition-all duration-300 relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-0 group-hover:w-full h-0.5 bg-accent transition-all duration-500" />
+                    <Icon className="w-10 h-10 text-accent mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="text-xl font-bold text-white mb-3">{svc.title}</h3>
+                    <div className="flex flex-wrap gap-1.5">
+                      {svc.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] tracking-wider text-gray-500 uppercase font-semibold">{tag}</span>
+                      ))}
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors">{svc.title}</h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">{svc.desc}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
+
+            {/* ── Other Services ── */}
+            {OTHER_SERVICES.map((svc, i) => {
+              const Icon = svc.icon;
+              return (
+                <Reveal key={svc.title} delay={300 + i * 60}>
+                  <div className="group bg-navy/30 border border-white/5 p-5 hover:border-accent/25 hover:bg-navy/50 transition-all duration-300 flex items-center gap-4">
+                    <div className="w-10 h-10 bg-accent/10 rounded flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors">
+                      <Icon className="w-4 h-4 text-accent" />
+                    </div>
+                    <span className="text-sm font-bold text-gray-300 group-hover:text-white transition-colors">{svc.title}</span>
                   </div>
                 </Reveal>
               );
@@ -144,10 +190,10 @@ export default function PruittsHome() {
           </div>
 
           <Reveal delay={400}>
-            <div className="text-center mt-14">
-              <p className="text-gray-500 text-sm mb-4">Don&apos;t see what you need? We probably do it anyway.</p>
-              <a href="tel:+14178182104" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white text-sm font-bold tracking-[0.12em] uppercase hover:bg-accent-light transition-all hover:shadow-lg hover:shadow-accent/20">
-                <Phone className="w-4 h-4" />Ask Us &mdash; It&apos;s Free
+            <div className="text-center mt-10">
+              <a href="tel:+14178182104" className="inline-flex items-center gap-2 text-accent text-sm font-bold tracking-wider uppercase hover:text-accent-light transition-colors group">
+                <Phone className="w-4 h-4" />Don&apos;t see it? Ask us &mdash; it&apos;s free
+                <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </Reveal>
