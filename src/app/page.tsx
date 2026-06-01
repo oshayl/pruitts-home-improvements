@@ -64,7 +64,7 @@ export default function PruittsHome() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden grain-overlay">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-charcoal to-navy" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--color-accent)/0.08,_transparent_70%)]" />
         {/* Diagonal accent stripe */}
@@ -261,8 +261,8 @@ export default function PruittsHome() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.12),_transparent_70%)]" />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23fff\' fill-opacity=\'1\'%3E%3Cpath d=\'M0 0h1v1H0z\'/%3E%3C/g%3E%3C/svg%3E")' }} />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Need Something Done?</h2>
-          <p className="text-white/80 text-lg mb-10">Every quote is free. Every job is personal. Give us a call.</p>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">READY TO GET STARTED?</h2>
+          <p className="text-white/80 text-lg mb-10">No hidden fees. No runaround. Just honest work at a fair price.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="tel:+14178182104" className="inline-flex items-center gap-2 px-10 py-4 bg-white text-accent text-sm font-extrabold tracking-[0.12em] uppercase hover:bg-gray-100 transition-all duration-300 shadow-lg group">
               <Phone className="w-4 h-4 group-hover:animate-pulse" />(417) 818-2104
