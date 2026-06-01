@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="accent-bar" />
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10">
-          <div>
+          <div className="md:border-l-4 md:border-l-accent md:pl-6">
             <div className="flex flex-col leading-none mb-4">
               <span className="text-lg font-extrabold tracking-wide text-white">PRUITT&apos;S</span>
               <span className="text-[9px] tracking-[0.25em] text-accent uppercase font-semibold">Home Improvements</span>
@@ -15,32 +15,27 @@ export default function Footer() {
             <p className="text-sm text-gray-400 leading-relaxed">
               Home improvements, maintenance, and repairs. Serving Springfield and surrounding areas.
             </p>
-            <div className="mt-4 inline-block px-3 py-1 bg-accent/20 text-accent text-[10px] tracking-[0.15em] uppercase font-bold rounded">
-              Free Quotes
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 bg-accent text-white text-[10px] tracking-[0.15em] uppercase font-bold rounded">
+              <Phone className="w-3 h-3" />Free Quotes — (417) 818-2104
             </div>
           </div>
 
           <div>
             <h4 className="text-xs tracking-[0.2em] text-accent uppercase mb-4 font-bold">Services</h4>
-            <div className="space-y-2 text-sm text-gray-400">
-              <p>Deck Building &amp; Repairs</p>
-              <p>Power Washing</p>
-              <p>Plumbing</p>
-              <p>Demolition &amp; Haul Offs</p>
-              <p>Yard &amp; Property Clean Up</p>
-              <p>Gutter Cleaning</p>
-              <p>Garage &amp; Storage Cleanouts</p>
-              <p>Moving</p>
+            <div className="space-y-2">
+              {["Deck Building & Repairs", "Power Washing", "Plumbing", "Demolition & Haul Offs", "Yard & Property Clean Up", "Gutter Cleaning", "Garage & Storage Cleanouts", "Moving"].map((s) => (
+                <Link key={s} href="/#services" className="block text-sm text-gray-400 hover:text-accent transition-colors">{s}</Link>
+              ))}
             </div>
           </div>
 
           <div>
             <h4 className="text-xs tracking-[0.2em] text-accent uppercase mb-4 font-bold">Quick Links</h4>
             <div className="space-y-2">
-              <Link href="/#services" className="block text-sm text-gray-400 hover:text-white transition-colors">Services</Link>
-              <Link href="/#about" className="block text-sm text-gray-400 hover:text-white transition-colors">About</Link>
-              <Link href="/#gallery" className="block text-sm text-gray-400 hover:text-white transition-colors">Gallery</Link>
-              <Link href="/#contact" className="block text-sm text-gray-400 hover:text-white transition-colors">Contact</Link>
+              <Link href="/#services" className="block text-sm text-gray-400 hover:text-accent transition-colors">Services</Link>
+              <Link href="/#about" className="block text-sm text-gray-400 hover:text-accent transition-colors">About</Link>
+              <Link href="/#gallery" className="block text-sm text-gray-400 hover:text-accent transition-colors">Gallery</Link>
+              <Link href="/#contact" className="block text-sm text-gray-400 hover:text-accent transition-colors">Contact</Link>
             </div>
           </div>
 
@@ -60,8 +55,8 @@ export default function Footer() {
                 <span>Springfield, MO</span>
               </div>
             </div>
-            <a href="tel:+14178182104" className="mt-5 inline-block px-5 py-2.5 bg-accent text-white text-xs tracking-[0.12em] uppercase font-bold hover:bg-accent-light transition-all">
-              Call Now
+            <a href="tel:+14178182104" className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-xs tracking-[0.12em] uppercase font-bold hover:bg-accent-light transition-all">
+              <Phone className="w-3.5 h-3.5" />Call Now
             </a>
           </div>
         </div>

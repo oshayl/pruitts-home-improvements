@@ -366,7 +366,7 @@ export default function PruittsHome() {
       </section>
 
       {/* ── Mobile Sticky CTA ── */}
-      <a href="tel:+14178182104" className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-accent text-white text-center py-3.5 font-bold text-sm tracking-[0.1em] uppercase hover:bg-accent-light transition-colors flex items-center justify-center gap-2 shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
+      <a href="tel:+14178182104" className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-accent text-white text-center py-3.5 font-bold text-sm tracking-[0.1em] uppercase hover:bg-accent-light transition-colors flex items-center justify-center gap-2 shadow-[0_-2px_10px_rgba(232,87,42,0.4)] animate-pulse">
         <Phone className="w-4 h-4" />Call Now — Free Quote
       </a>
       {/* Bottom padding for mobile sticky CTA */}
