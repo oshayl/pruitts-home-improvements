@@ -71,33 +71,25 @@ export default function PruittsHome() {
         <div className="absolute -right-40 top-1/4 w-[600px] h-[600px] -rotate-12 bg-accent/[0.03] blur-3xl rounded-full" />
         <div className="absolute bottom-0 left-0 right-0 h-1 accent-bar" />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto pt-20">
+        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20 pb-8">
           <Reveal>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-accent/20 border border-accent/40 rounded mb-6">
-              <Phone className="w-3.5 h-3.5 text-accent" />
-              <span className="text-[11px] tracking-[0.15em] text-accent uppercase font-bold">Free Quotes &mdash; (417) 818-2104</span>
-            </div>
-          </Reveal>
-
-          <Reveal delay={150}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.9] mb-6">
-              <span className="text-white">HOME</span><br />
-              <span className="text-accent">IMPROVEMENTS</span><br />
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tighter leading-[0.88] mb-5">
+              <span className="text-accent">HOME IMPROVEMENTS</span>
+              <br />
               <span className="text-white">DONE RIGHT</span>
             </h1>
           </Reveal>
 
-          <Reveal delay={300}>
-            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-4">
-              Decks. Plumbing. Power washing. Demolition. Moving.<br className="hidden md:block" />
-              <strong className="text-white">Whatever you need done, we handle it.</strong>
+          <Reveal delay={200}>
+            <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-8">
+              Decks. Plumbing. Power washing. Demolition. Moving. <strong className="text-white">Whatever you need.</strong>
             </p>
           </Reveal>
 
-          <Reveal delay={450}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <Reveal delay={350}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="tel:+14178182104" className="group px-8 py-4 bg-accent text-white text-sm font-bold tracking-[0.12em] uppercase hover:bg-accent-light transition-all duration-300 hover:shadow-lg hover:shadow-accent/25 hover:scale-[1.02]">
-                <Phone className="w-4 h-4 inline mr-2 -mt-0.5 group-hover:animate-pulse" />Call (417) 818-2104
+                <Phone className="w-4 h-4 inline mr-2 -mt-0.5 group-hover:animate-pulse" />(417) 818-2104
               </a>
               <a href="/#services" className="px-8 py-4 border-2 border-white/20 text-white text-sm font-bold tracking-[0.12em] uppercase hover:border-accent hover:text-accent transition-all duration-300">
                 View Services
@@ -105,10 +97,10 @@ export default function PruittsHome() {
             </div>
           </Reveal>
 
-          <Reveal delay={600}>
-            <div className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-gray-500 uppercase tracking-wider">
+          <Reveal delay={500}>
+            <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-400 uppercase tracking-widest font-semibold">
               {TRUST_ITEMS.map((item) => (
-                <span key={item} className="flex items-center gap-1.5"><CheckCircle2 className="w-3 h-3 text-accent" />{item}</span>
+                <span key={item} className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent" />{item}</span>
               ))}
             </div>
           </Reveal>
